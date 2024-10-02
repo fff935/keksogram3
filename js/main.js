@@ -1,4 +1,5 @@
 import { generatePhotos } from './mokData.js';
+import { renderThumbnails } from './renderThumbnails.js';
 
 const photos = generatePhotos();
-console.log(photos);
+renderThumbnails(photos); // Відображаємо мініатюри
