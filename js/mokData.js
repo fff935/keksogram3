@@ -1,9 +1,7 @@
-// Helper function to generate random integers
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Data for descriptions, messages, and names
 const descriptions = [
   "Чудовий захід сонця над океаном.",
   "Прогулянка по лісу після дощу.",
@@ -28,7 +26,6 @@ const messages = [
 
 const names = ["Олег", "Катерина", "Іван", "Марина", "Артем", "Олександр"];
 
-// Generate random comments
 function generateComments(count) {
   return Array(count).fill(null).map(() => ({
     id: getRandomInt(100, 999),
@@ -38,7 +35,6 @@ function generateComments(count) {
   }));
 }
 
-// Generate photos with comments and likes
 export function generatePhotos() {
   return Array(25).fill(null).map((_, i) => ({
     id: i + 1,

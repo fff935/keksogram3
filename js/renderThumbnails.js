@@ -1,24 +1,22 @@
-// Функція для створення однієї мініатюри
 function createThumbnail(photo) {
   const template = document.querySelector("#picture").content.cloneNode(true);
   const imgElement = template.querySelector(".picture__img");
   const likesElement = template.querySelector(".picture__likes");
   const commentsElement = template.querySelector(".picture__comments");
 
-  imgElement.src = photo.url; // URL для фото
-  likesElement.textContent = photo.likes; // Кількість лайків
-  commentsElement.textContent = photo.comments.length; // Кількість коментарів
+  imgElement.src = photo.url;
+  likesElement.textContent = photo.likes; 
+  commentsElement.textContent = photo.comments.length;
 
   return template;
 }
 
-// Функція для створення всіх мініатюр
 function renderThumbnails(photos) {
   const fragment = document.createDocumentFragment();
-  photos.map((photo) => fragment.appendChild(createThumbnail(photo))); // Використовуємо map та createThumbnail
+  photos.map((photo) => fragment.appendChild(createThumbnail(photo)));
 
   const picturesContainer = document.querySelector(".pictures");
-  picturesContainer.appendChild(fragment); // Вставляємо мініатюри в контейнер
+  picturesContainer.appendChild(fragment);
 }
 
 export { createThumbnail, renderThumbnails };
