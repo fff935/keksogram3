@@ -1,4 +1,3 @@
-// Функція для створення мініатюри фотографії
 function createThumbnail(photo) {
   const template = document.querySelector("#picture").content.cloneNode(true);
   const imgElement = template.querySelector(".picture__img");
@@ -12,7 +11,6 @@ function createThumbnail(photo) {
   return template;
 }
 
-// Функція для відображення мініатюр фотографій
 function renderThumbnails(photos) {
   const fragment = document.createDocumentFragment();
   photos.forEach((photo) => {
