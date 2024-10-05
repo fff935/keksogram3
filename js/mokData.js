@@ -41,6 +41,6 @@ export function generatePhotos() {
     url: `photos/${i + 1}.jpg`,
     description: descriptions[getRandomInt(0, descriptions.length - 1)],
     likes: getRandomInt(15, 200),
-    comments: generateComments(getRandomInt(1, 5)),
+    comments: generateComments(getRandomInt(1, 50)),
   }));
 }
