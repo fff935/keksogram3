@@ -28,105 +28,107 @@
       <h2 class="pictures__title  visually-hidden">Фотографії іншіх корістувачів</h2>
 
       <!-- Поле для завантаження нового зображення на сайт -->
-      <section class="img-upload">
-        <div class="img-upload__wrapper">
-          <h2 class="img-upload__title  visually-hidden">Завантаження фотографій</h2>
-          <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data" autocomplete="off" action="https://23.javascript.pages.academy/kekstagram" autocomplete="off ">
+      <!-- Поле для завантаження нового зображення на сайт -->
+<section class="img-upload">
+  <div class="img-upload__wrapper">
+    <h2 class="img-upload__title visually-hidden">Завантаження фотографій</h2>
+    <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data" action="https://23.javascript.pages.academy/kekstagram" autocomplete="off">
 
-            <!-- Початковий стан поля для завантаження зображення-->
-            <fieldset class="img-upload__start">
-              <input type="file" id="upload-file" accept="image/*" class="img-upload__input  visually-hidden" name="filename" required>
-              <label for="upload-file" class="img-upload__label  img-upload__control">Завантажити</label>
+      <!-- Початковий стан поля для завантаження зображення-->
+      <fieldset class="img-upload__start">
+        <input type="file" id="upload-file" accept="image/*" class="img-upload__input visually-hidden" name="filename" required>
+        <label for="upload-file" class="img-upload__label img-upload__control">Завантажити</label>
+      </fieldset>
+
+      <!-- Форма редагування зображення-->
+      <div class="img-upload__overlay hidden">
+        <div class="img-upload__wrapper">
+          <div class="img-upload__preview-container">
+
+            <!-- Зміна розміру зображення -->
+            <fieldset class="img-upload__scale scale">
+              <button type="button" class="scale__control scale__control--smaller">Зменшити</button>
+              <input type="text" class="scale__control scale__control--value" value="100%" title="Image Scale" name="scale" readonly>
+              <button type="button" class="scale__control scale__control--bigger">Збільшити</button>
             </fieldset>
 
-            <!-- Форма редагування зображення-->
-            <div class="img-upload__overlay hidden">
-              <div class="img-upload__wrapper">
-                <div class="img-upload__preview-container">
-
-                  <!-- Зміна розміру зображення -->
-                  <fieldset class="img-upload__scale  scale">
-                    <button type="button" class="scale__control  scale__control--smaller">Зменшити</button>
-                    <input type="text" class="scale__control  scale__control--value" value="100%" title="Image Scale" name="scale" readonly>
-                    <button type="button" class="scale__control  scale__control--bigger">Збільшити</button>
-                  </fieldset>
-
-                  <!-- Попередній перегляд зображення -->
-                  <div class="img-upload__preview">
-                    <img src="img/upload-default-image.jpg" alt="Попередній перегляд фотографії">
-                  </div>
-
-                  <!-- Зміна глибини ефекту, що накладається на зображення-->
-                  <fieldset class="img-upload__effect-level  effect-level">
-                    <input class="effect-level__value" type="number" step="any" name="effect-level" value="">
-                    <div class="effect-level__slider"></div>
-                  </fieldset>
-
-                  <!-- Кнопка для закриття форми редагування зображення -->
-                  <button type="reset" class="img-upload__cancel  cancel" id="upload-cancel">Закрити</button>
-                </div>
-
-                <!-- Накладення ефекту на зображення-->
-                <fieldset class="img-upload__effects  effects">
-                  <ul class="effects__list">
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-none" value="none" checked>
-                      <label for="effect-none" class="effects__label">
-                        <span class="effects__preview  effects__preview--none">Превью фото без кфекту</span>
-                        Оригінал
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-chrome" value="chrome">
-                      <label for="effect-chrome" class="effects__label">
-                        <span class="effects__preview  effects__preview--chrome">Превью ефекту Хром</span>
-                        Хром
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-sepia" value="sepia">
-                      <label for="effect-sepia" class="effects__label">
-                        <span class="effects__preview  effects__preview--sepia">Превью ефекту Сепія</span>
-                        Сепія
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-marvin" value="marvin">
-                      <label for="effect-marvin" class="effects__label">
-                        <span class="effects__preview  effects__preview--marvin">Превью ефекту Марвін</span>
-                        Марвін
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-phobos" value="phobos">
-                      <label for="effect-phobos" class="effects__label">
-                        <span class="effects__preview  effects__preview--phobos">Превью ефекту Фобос</span>
-                        Фобос
-                      </label>
-                    </li>
-                    <li class="effects__item">
-                      <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-heat" value="heat">
-                      <label for="effect-heat" class="effects__label">
-                        <span class="effects__preview  effects__preview--heat">Превью ефекту Зной</span>
-                        Зной
-                      </label>
-                    </li>
-                  </ul>
-                </fieldset>
-
-                <!-- Додавання хеш-тегів та коментаря до зображення -->
-                <fieldset class="img-upload__text text">
-                  <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег" required>
-                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..."  maxlength="140" ></textarea>
-                </fieldset>
-
-                <!-- Кнопка для отправки данных на сервер -->
-                <button type="submit" class="img-upload__submit" id="upload-submit">Опублікувати</button>
-              </div>
+            <!-- Попередній перегляд зображення -->
+            <div class="img-upload__preview">
+              <img src="img/upload-default-image.jpg" alt="Попередній перегляд фотографії">
             </div>
-          </form>
+
+            <!-- Зміна глибини ефекту, що накладається на зображення-->
+            <fieldset class="img-upload__effect-level effect-level">
+              <input class="effect-level__value" type="number" step="any" name="effect-level" value="">
+              <div class="effect-level__slider"></div>
+            </fieldset>
+
+            <!-- Кнопка для закриття форми редагування зображення -->
+            <button type="reset" class="img-upload__cancel cancel" id="upload-cancel">Закрити</button>
+          </div>
+
+          <!-- Накладення ефекту на зображення-->
+          <fieldset class="img-upload__effects effects">
+            <ul class="effects__list">
+              <li class="effects__item">
+                <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-none" value="none" checked>
+                <label for="effect-none" class="effects__label">
+                  <span class="effects__preview effects__preview--none">Превью фото без кфекту</span>
+                  Оригінал
+                </label>
+              </li>
+              <li class="effects__item">
+                <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-chrome" value="chrome">
+                <label for="effect-chrome" class="effects__label">
+                  <span class="effects__preview effects__preview--chrome">Превью ефекту Хром</span>
+                  Хром
+                </label>
+              </li>
+              <li class="effects__item">
+                <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-sepia" value="sepia">
+                <label for="effect-sepia" class="effects__label">
+                  <span class="effects__preview effects__preview--sepia">Превью ефекту Сепія</span>
+                  Сепія
+                </label>
+              </li>
+              <li class="effects__item">
+                <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-marvin" value="marvin">
+                <label for="effect-marvin" class="effects__label">
+                  <span class="effects__preview effects__preview--marvin">Превью ефекту Марвін</span>
+                  Марвін
+                </label>
+              </li>
+              <li class="effects__item">
+                <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-phobos" value="phobos">
+                <label for="effect-phobos" class="effects__label">
+                  <span class="effects__preview effects__preview--phobos">Превью ефекту Фобос</span>
+                  Фобос
+                </label>
+              </li>
+              <li class="effects__item">
+                <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-heat" value="heat">
+                <label for="effect-heat" class="effects__label">
+                  <span class="effects__preview effects__preview--heat">Превью ефекту Зной</span>
+                  Зной
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <!-- Додавання хеш-тегів та коментаря до зображення -->
+          <fieldset class="img-upload__text text">
+            <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег" required>
+            <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140"></textarea>
+          </fieldset>
+
+          <!-- Кнопка для отправки данных на сервер -->
+          <button type="submit" class="img-upload__submit" id="upload-submit">Опублікувати</button>
         </div>
-      </section>
+      </div>
+    </form>
+  </div>
+</section>
+
 
       <!-- Тут будуть зображення інших користувачів-->
 
