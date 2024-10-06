@@ -1,6 +1,7 @@
 import { generatePhotos } from './mokData.js';
 import { renderThumbnails } from './renderThumbnails.js';
 import { showBigPicture } from './bigPicture.js';
+import { showForm, hideForm } from './form.js';
 
 const photos = generatePhotos();
 
